@@ -1,0 +1,31 @@
+spring:
+    profiles:
+        active: ${spring.profiles.active}
+    application:
+        name: mybatisdemo
+    
+    datasource:
+        name: mytest
+        initialize: false
+        driver-class-name: com.mysql.jdbc.ReplicationDriver
+        username: root
+        password:
+        url: jdbc:mysql:replication://localhost:3306,localhost:3306/mytest?characterEncoding=UTF-8&useSSL=false
+        type: com.zaxxer.hikari.HikariDataSource
+        hikari:
+            connection-timeout: 5000
+            maximum-pool-size: 8
+            minimum-idle: 1
+            transaction-isolation: TRANSACTION_READ_COMMITTED
+            data-source-properties:
+                cachePrepStmts: true
+                prepStmtCacheSize: 250
+                prepStmtCacheSqlLimit: 2048
+                useServerPrepStmts: true
+
+mybatis:
+    configuration:
+        default-fetch-size: 100
+        default-statement-timeout: 30
+        map-underscore-to-camel-case: true
+    mapper-locations: classpath*:/sqlmaps/**/*.xml
