@@ -9,7 +9,6 @@
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-  <classPathEntry location="${user.home}/.m2/repository/mysql/mysql-connector-java/5.1.44/mysql-connector-java-5.1.44.jar" />
   <context id="mytest" targetRuntime="MyBatis3">
     <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />
     <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
